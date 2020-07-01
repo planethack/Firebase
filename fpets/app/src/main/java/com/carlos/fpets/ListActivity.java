@@ -1,18 +1,17 @@
-package com.carlos.fcomputers;
+package com.carlos.fpets;
 
 import android.os.Bundle;
 
-import com.carlos.fcomputers.adapters.ComputerAdapter;
-import com.carlos.fcomputers.models.ComputerModel;
+import com.carlos.fpets.R;
+import com.carlos.fpets.adapters.PetAdapter;
+import com.carlos.fpets.models.PetModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
@@ -24,7 +23,7 @@ import java.util.ArrayList;
 public class ListActivity extends BaseActivity {
 
     private FloatingActionButton fab_list_add;
-    private ListView lv_list_computers;
+    private ListView lv_list_pets;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +35,7 @@ public class ListActivity extends BaseActivity {
         super.init();
         init();
 
+        getPets();
         fab_list_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,22 +43,22 @@ public class ListActivity extends BaseActivity {
             }
         });
 
-        lv_list_computers.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        lv_list_pets.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 model = modelArrayList.get(position);
                 goToDetail(model);
-                makeSimpleAlertDialog("Openning","Openning computer " + model.getSerial() );
+                makeSimpleAlertDialog("Openning","Openning pet " + model.getName() );
             }
         });
     }
 
     protected void init(){
         fab_list_add = findViewById(R.id.fab_list_add);
-        lv_list_computers = findViewById(R.id.lv_list_computers);
+        lv_list_pets = findViewById(R.id.lv_list_pets);
     }
 
-    protected void getComputers(){
+    protected void getPets(){
         if(collectionReference != null){
             collectionReference.get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
@@ -67,16 +67,16 @@ public class ListActivity extends BaseActivity {
                         if(task.getResult() != null) {
                             modelArrayList = new ArrayList<>();
                             for (QueryDocumentSnapshot snapshot : task.getResult()) {
-                                model = snapshot.toObject(ComputerModel.class);
+                                model = snapshot.toObject(PetModel.class);
                                 modelArrayList.add(model);
                             }
                             if(modelArrayList.size() > 0){
-                                paintComputers(modelArrayList);
+                                paintPets(modelArrayList);
                             }
                         }
                         else
                         {
-                            makeSimpleAlertDialog("Warning", "Computer doesnt found");
+                            makeSimpleAlertDialog("Warning", "Pet doesnt found");
                         }
                     }
                     else
@@ -93,14 +93,14 @@ public class ListActivity extends BaseActivity {
         }
     }
 
-    private Object paintComputers(ArrayList<ComputerModel> modelArrayList) {
-        adapter = new ComputerAdapter(this, modelArrayList);
-        return  adapter;
+    private void paintPets(ArrayList<PetModel> modelArrayList) {
+        adapter = new PetAdapter(this, modelArrayList);
+        lv_list_pets.setAdapter(adapter);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        getComputers();
+        getPets();
     }
 }

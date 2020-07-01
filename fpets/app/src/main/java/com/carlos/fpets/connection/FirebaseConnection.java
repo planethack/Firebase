@@ -1,4 +1,4 @@
-package com.carlos.fcomputers.connection;
+package com.carlos.fpets.connection;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;

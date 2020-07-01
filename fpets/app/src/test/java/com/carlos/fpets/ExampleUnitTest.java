@@ -1,4 +1,4 @@
-package com.carlos.fcomputers;
+package com.carlos.fpets;
 
 import org.junit.Test;
 

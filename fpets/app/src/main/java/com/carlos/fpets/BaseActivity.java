@@ -1,4 +1,4 @@
-package com.carlos.fcomputers;
+package com.carlos.fpets;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,9 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.carlos.fcomputers.adapters.ComputerAdapter;
-import com.carlos.fcomputers.connection.FirebaseConnection;
-import com.carlos.fcomputers.models.ComputerModel;
+import com.carlos.fpets.adapters.PetAdapter;
+import com.carlos.fpets.connection.FirebaseConnection;
+import com.carlos.fpets.models.PetModel;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -22,9 +22,9 @@ import java.util.ArrayList;
 
 public class BaseActivity extends AppCompatActivity {
 
-    protected ComputerModel model;
-    protected ArrayList<ComputerModel> modelArrayList;
-    protected ComputerAdapter adapter;
+    protected PetModel model;
+    protected ArrayList<PetModel> modelArrayList;
+    protected PetAdapter adapter;
 
     protected FirebaseFirestore db;
     protected FirebaseAuth mAuth;
@@ -35,7 +35,7 @@ public class BaseActivity extends AppCompatActivity {
     protected CollectionReference collectionReference;
     protected StorageReference  mStorageReference, fileReference;
 
-    protected final String COLLECTION_NAME = "computers";
+    protected final String COLLECTION_NAME = "pets";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +44,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     protected void init(){
-        model = new ComputerModel();
+        model = new PetModel();
         db = FirebaseConnection.ConnectionFirestore();
         mAuth = FirebaseConnection.ConnectionAuth();
         mFirebaseStorage = FirebaseConnection.ConnectionStorage();
@@ -88,7 +88,7 @@ public class BaseActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    protected void goToDetail(ComputerModel model)
+    protected void goToDetail(PetModel model)
     {
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra("model", model);

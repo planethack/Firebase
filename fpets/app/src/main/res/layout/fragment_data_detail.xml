@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DataDetailFragment">
+    tools:context="com.carlos.fpets.DataDetailFragment">
 
     <TextView
         android:id="@+id/tv_create_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Computer"
+        android:text="Pet"
         android:textSize="22sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,7 @@
         app:srcCompat="@drawable/ic_computer_black_18dp" />
 
     <TextView
-        android:id="@+id/et_create_serial"
+        android:id="@+id/et_create_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
@@ -47,14 +47,14 @@
         app:layout_constraintTop_toBottomOf="@+id/iv_create_image" />
 
     <TextView
-        android:id="@+id/et_create_brand"
+        android:id="@+id/et_create_breed"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_create_serial" />
+        app:layout_constraintTop_toBottomOf="@+id/et_create_name" />
 
     <TextView
         android:id="@+id/et_create_description"
@@ -64,7 +64,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_create_brand" />
+        app:layout_constraintTop_toBottomOf="@+id/et_create_breed" />
 
     <Button
         android:id="@+id/button_first"

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/DataDetailFragment"
-        android:name="com.carlos.fcomputers.DataDetailFragment"
+        android:name="com.carlos.fpets.DataDetailFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_data_detail">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/ImageDetailFragment"
-        android:name="com.carlos.fcomputers.ImageDetailFragment"
+        android:name="com.carlos.fpets.ImageDetailFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_image_detail">
 

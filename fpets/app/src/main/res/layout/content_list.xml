@@ -8,7 +8,7 @@
 
 
     <ListView
-        android:id="@+id/lv_list_computers"
+        android:id="@+id/lv_list_pets"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"

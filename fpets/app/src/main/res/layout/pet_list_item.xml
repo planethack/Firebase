@@ -16,7 +16,7 @@
         android:layout_weight="0.2">
 
         <ImageView
-            android:id="@+id/iv_computer_list_item_image"
+            android:id="@+id/iv_pet_list_item_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/ic_computer_black_18dp" />
@@ -31,24 +31,24 @@
 
 
         <TextView
-            android:id="@+id/tv_computer_list_item_description"
+            android:id="@+id/tv_pet_list_item_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="20sp"
             android:text="Descripcion" />
 
         <TextView
-            android:id="@+id/tv_computer_list_item_serial"
+            android:id="@+id/tv_pet_list_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="17sp"
             android:text="Serial" />
         <TextView
-            android:id="@+id/tv_computer_list_item_brand"
+            android:id="@+id/tv_pet_list_item_breed"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="17sp"
-            android:text="Marca" />
+            android:text="Raza" />
     </LinearLayout>
 
 

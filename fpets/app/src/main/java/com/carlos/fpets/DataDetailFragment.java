@@ -1,20 +1,20 @@
-package com.carlos.fcomputers;
+package com.carlos.fpets;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
-import com.carlos.fcomputers.models.ComputerModel;
+import com.carlos.fpets.R;
+import com.carlos.fpets.models.PetModel;
 
 public class DataDetailFragment extends Fragment {
-    static private String serial, description, brand;
+    static private String name, description, breed;
     private boolean active;
 
 
@@ -32,12 +32,12 @@ public class DataDetailFragment extends Fragment {
 
         TextView tv_serial, tv_brand, tv_description;
 
-        tv_serial = view.findViewById(R.id.et_create_serial);
-        tv_brand = view.findViewById(R.id.et_create_brand);
+        tv_serial = view.findViewById(R.id.et_create_name);
+        tv_brand = view.findViewById(R.id.et_create_breed);
         tv_description = view.findViewById(R.id.et_create_description);
 
-        tv_serial.setText(serial);
-        tv_brand.setText(brand);
+        tv_serial.setText(name);
+        tv_brand.setText(breed);
         tv_description.setText(description);
 
         view.findViewById(R.id.button_first).setOnClickListener(new View.OnClickListener() {
@@ -50,10 +50,10 @@ public class DataDetailFragment extends Fragment {
     }
 
     static void receiveData(Bundle bundle){
-        ComputerModel model = (ComputerModel)bundle.getSerializable("model");
+        PetModel model = (PetModel)bundle.getSerializable("model");
         if(model != null){
-            serial = model.getSerial();
-            brand = model.getBrand();
+            name = model.getName();
+            breed = model.getBreed();
             description = model.getDescription();
         }
     }

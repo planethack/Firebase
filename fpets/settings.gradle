@@ -1,2 +1,2 @@
-rootProject.name='fComputers'
+rootProject.name='fpets'
 include ':app'

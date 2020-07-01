@@ -1,18 +1,14 @@
-package com.carlos.fcomputers;
+package com.carlos.fpets;
 
 import android.os.Bundle;
 
-import com.carlos.fcomputers.models.ComputerModel;
+import com.carlos.fpets.R;
+import com.carlos.fpets.models.PetModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
-import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 public class DetailActivity extends BaseActivity {
     FloatingActionButton fab_list;
@@ -28,7 +24,7 @@ public class DetailActivity extends BaseActivity {
         super.init();
         init();
 
-        model = (ComputerModel) getIntent().getSerializableExtra("model");
+        model = (PetModel) getIntent().getSerializableExtra("model");
 
         if(model != null){
             Bundle bundle = new Bundle();

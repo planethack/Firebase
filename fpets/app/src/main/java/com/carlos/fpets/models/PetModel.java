@@ -1,12 +1,12 @@
-package com.carlos.fcomputers.models;
+package com.carlos.fpets.models;
 
 import java.io.Serializable;
 
-public class ComputerModel implements Serializable {
+public class PetModel implements Serializable {
     private String id;
-    private String serial;
+    private String name;
     private String description;
-    private String brand;
+    private String breed;
     private String imageUrl;
     private boolean active;
 
@@ -18,12 +18,12 @@ public class ComputerModel implements Serializable {
         this.id = id;
     }
 
-    public String getSerial() {
-        return serial;
+    public String getName() {
+        return name;
     }
 
-    public void setSerial(String serial) {
-        this.serial = serial;
+    public void setName(String serial) {
+        this.name = serial;
     }
 
     public String getDescription() {
@@ -34,12 +34,12 @@ public class ComputerModel implements Serializable {
         this.description = description;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getBreed() {
+        return breed;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setBreed(String brand) {
+        this.breed = brand;
     }
 
     public String getImageUrl() {
